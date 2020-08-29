@@ -1,0 +1,17 @@
+
+start() {
+    . /opt/backend/scripts/util
+    info "TABLE CREATION START"
+    local cmm=${1:-""}
+    local pwd="$(pwd)"
+
+    [ ! -f "/opt/backend/modules/databases/tables/$cmm.sql" ] && fatal "Not such file" && return 0
+
+    cd /opt/backend/modules/databases
+    psql -d akhromlyuk_db -h localhost -U alexandr -f tables/$cmm.sql
+
+    info "Готово"
+    cd $pwd
+    info "FINISH"
+    return 0
+}

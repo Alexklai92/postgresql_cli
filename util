@@ -1,0 +1,24 @@
+info() {
+    local mess="${1:-""}"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] [INFO] [$$]: ${mess}"
+    return 0
+}
+
+warrning() {
+    local mess="${1:-""}"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] [WARRNING] [$$]: ${mess}"
+    return 0
+}
+
+fatal() {
+    local mess="${1:-""}"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] [FATAL] [$$]: ${mess}"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] [FATAL] [$$]: STOP SCRIPT"
+    return 0
+}
+
+debug() {
+    local mess="${1:-""}"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] [DEBUG] [$$]: ${mess}"
+    return 0
+}

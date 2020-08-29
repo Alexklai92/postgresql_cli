@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -eu
+
+. /opt/backend/scripts/util
+
+CLI_SCRIPT="/opt/backend/scripts"
+
+run() {
+    local file="$1" command="$2"
+    cd $CLI_SCRIPT
+    [ ! -f $file ] && echo "Not such file" && return 0
+    . /opt/backend/scripts/$file
+
+    start "$command"
+
+    return 0
+}
+
+main() {
+    local file=${1:-""}
+    local command=${2:-""}
+    run "$file" "$command"
+    return 0
+}
+
+main "$@"
