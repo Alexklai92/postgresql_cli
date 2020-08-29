@@ -1,11 +1,15 @@
 # postgresql_cli
 Набросок утилит для работы с psql через терминал
 
+```
 cd postgresql_cli
+
 chmod +x *
+
 $a = pwd
 echo "alias db_cli='${a}/pg_cli'" > ~/.bashrc
 source ~/.bashrc
+```
 
 examples: 
 ```bash
