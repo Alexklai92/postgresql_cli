@@ -4,7 +4,7 @@
 cd postgresql_cli
 chmod +x *
 $a = pwd
-echo "alias db_cli='$a'/pg_cli" > ~/.bashrc
+echo "alias db_cli='${a}/pg_cli'" > ~/.bashrc
 source ~/.bashrc
 
 examples: 
